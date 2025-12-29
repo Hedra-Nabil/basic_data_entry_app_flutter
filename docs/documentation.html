@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry App - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #5C4CDB;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .badge-flutter { background: #02569B; }
+        .badge-dart { background: #0175C2; }
+        .badge-license { background: #28a745; }
+        
+        .screenshot {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .screenshot img {
+            max-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        h2 {
+            color: #5C4CDB;
+            font-size: 1.5em;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #5C4CDB;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin: 20px 0 10px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .feature {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #5C4CDB;
+        }
+        
+        .feature-icon {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .architecture {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.85em;
+            overflow-x: auto;
+            white-space: pre;
+        }
+        
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+        
+        .highlight-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .highlight-table th,
+        .highlight-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .highlight-table th {
+            background: #5C4CDB;
+            color: white;
+        }
+        
+        .highlight-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: white;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #5C4CDB;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-success { background: #28a745; }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>📝 Data Entry App</h1>
+                <p class="subtitle">A beautiful, clean-architecture Flutter app for simple data entry and display</p>
+            </div>
+            
+            <div class="badges">
+                <span class="badge badge-flutter">Flutter</span>
+                <span class="badge badge-dart">Dart</span>
+                <span class="badge badge-license">MIT License</span>
+            </div>
+            
+            <div class="screenshot">
+                <img src="screenshots/screenshot1.png" alt="App Screenshot">
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>✨ Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📝</div>
+                    <strong>Text Entry</strong>
+                    <p>Simple and intuitive text input</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <strong>Beautiful UI</strong>
+                    <p>Purple gradient theme design</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <strong>Responsive</strong>
+                    <p>Card-based adaptive layout</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <strong>Real-time Display</strong>
+                    <p>Instant text submission feedback</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏗️</div>
+                    <strong>Clean Architecture</strong>
+                    <p>Domain/Data/Presentation layers</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <strong>SOLID Principles</strong>
+                    <p>Best practices applied</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>🏗️ Architecture</h2>
+            <p>This project follows <strong>Clean Architecture</strong> principles:</p>
+            <div class="architecture">lib/
+├── main.dart
+├── core/
+│   ├── constants/
+│   │   ├── app_dimensions.dart
+│   │   └── app_strings.dart
+│   ├── di/
+│   │   └── dependency_injection.dart
+│   └── theme/
+│       ├── app_colors.dart
+│       ├── app_text_styles.dart
+│       └── app_theme.dart
+└── features/
+    └── data_entry/
+        ├── data/
+        │   ├── datasources/
+        │   └── repositories/
+        ├── domain/
+        │   ├── entities/
+        │   ├── repositories/
+        │   └── usecases/
+        └── presentation/
+            ├── controllers/
+            ├── screens/
+            └── widgets/</div>
+        </div>
+        
+        <div class="card">
+            <h2>🚀 Getting Started</h2>
+            
+            <h3>Prerequisites</h3>
+            <ul>
+                <li>Flutter SDK ^3.10.3</li>
+                <li>Dart SDK ^3.10.3</li>
+            </ul>
+            
+            <h3>Installation</h3>
+            <div class="code-block">
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/basic_data_entry_app_flutter.git
+
+# Navigate to project directory
+cd basic_data_entry_app_flutter
+
+# Install dependencies
+flutter pub get
+
+# Run the app
+flutter run</div>
+            
+            <h3>Build APK</h3>
+            <div class="code-block">flutter build apk --release</div>
+        </div>
+        
+        <div class="card">
+            <h2>🎨 Design Highlights</h2>
+            <table class="highlight-table">
+                <tr>
+                    <th>Feature</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>🎨 Color Scheme</td>
+                    <td>Purple gradient theme (#5C4CDB)</td>
+                </tr>
+                <tr>
+                    <td>📐 Layout</td>
+                    <td>Card-based responsive design</td>
+                </tr>
+                <tr>
+                    <td>✨ Animations</td>
+                    <td>Smooth loading states</td>
+                </tr>
+                <tr>
+                    <td>🔤 Typography</td>
+                    <td>Clean, readable fonts</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="card" style="text-align: center;">
+            <h2>📥 Download</h2>
+            <p>Get the latest release:</p>
+            <a href="#" class="btn btn-success">Download APK</a>
+            <a href="#" class="btn">View on GitHub</a>
+        </div>
+        
+        <div class="footer">
+            <p>Made with ❤️ using Flutter</p>
+            <p>© 2025 - MIT License</p>
+        </div>
+    </div>
+</body>
+</html>

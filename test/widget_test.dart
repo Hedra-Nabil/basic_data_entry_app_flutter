@@ -1,9 +1,4 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+// Widget tests for Data Entry App
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -11,20 +6,36 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:basic_data_entry_app_flutter/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Data Entry App renders correctly', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const DataEntryApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that the app title is displayed
+    expect(find.text('Data Entry App'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    // Verify that the submit button is displayed
+    expect(find.text('Submit'), findsOneWidget);
+
+    // Verify that the submitted text section is displayed
+    expect(find.text('Submitted Text'), findsOneWidget);
+  });
+
+  testWidgets('Can enter text and submit', (WidgetTester tester) async {
+    await tester.pumpWidget(const DataEntryApp());
+
+    // Find the text field and enter text
+    final textField = find.byType(TextField);
+    expect(textField, findsOneWidget);
+
+    await tester.enterText(textField, 'Test input');
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Tap the submit button
+    final submitButton = find.text('Submit');
+    await tester.tap(submitButton);
+    await tester.pumpAndSettle();
+
+    // Verify the submitted text is displayed
+    expect(find.text('Test input'), findsOneWidget);
   });
 }

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background Circle with gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7B6EE7"/>
+      <stop offset="100%" style="stop-color:#5C4CDB"/>
+    </linearGradient>
+    <linearGradient id="docGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="100%" style="stop-color:#F0F0F0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Main Background -->
+  <rect x="0" y="0" width="512" height="512" rx="100" fill="url(#bgGrad)"/>
+  
+  <!-- Document/Form Icon -->
+  <g transform="translate(120, 80)">
+    <!-- Document body -->
+    <path d="M0 40 Q0 0 40 0 L180 0 L272 92 L272 312 Q272 352 232 352 L40 352 Q0 352 0 312 Z" 
+          fill="url(#docGrad)" 
+          filter="drop-shadow(0 4px 8px rgba(0,0,0,0.2))"/>
+    
+    <!-- Folded corner -->
+    <path d="M180 0 L180 52 Q180 92 220 92 L272 92 Z" fill="#E0E0E0"/>
+    
+    <!-- Text lines -->
+    <rect x="40" y="130" width="160" height="16" rx="8" fill="#5C4CDB" opacity="0.3"/>
+    <rect x="40" y="165" width="192" height="16" rx="8" fill="#5C4CDB" opacity="0.3"/>
+    <rect x="40" y="200" width="120" height="16" rx="8" fill="#5C4CDB" opacity="0.3"/>
+    
+    <!-- Input field -->
+    <rect x="40" y="250" width="192" height="50" rx="25" fill="none" stroke="#5C4CDB" stroke-width="4"/>
+    
+    <!-- Cursor/typing indicator -->
+    <rect x="60" y="265" width="3" height="20" fill="#5C4CDB">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Checkmark/Submit indicator -->
+  <circle cx="400" cy="400" r="60" fill="#4CAF50"/>
+  <path d="M370 400 L390 420 L430 370" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
